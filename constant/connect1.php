@@ -4,7 +4,7 @@
 $servername = "localhost";
 $username = "garageuser";
 $password = "W5y00t0x?";
-$dbname = "garagedb";
+$dbname = "solution_garagedb";
 
 
 // Create connection

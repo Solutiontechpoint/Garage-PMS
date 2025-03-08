@@ -3,7 +3,7 @@
 $localhost = "localhost";
 $username = "garageuser";
 $password = "W5y00t0x?";
-$dbname = "garagedb";
+$dbname = "solution_garagedb";
 $store_url = "http://localhost/php-inventory/";
 // db connection
 $connect = new mysqli($localhost, $username, $password, $dbname);
