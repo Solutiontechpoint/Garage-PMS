@@ -2,8 +2,8 @@
 /* Local Database*/
 
 $servername = "localhost";
-$username = "root";
-$password = "password";
+$username = "garageuser";
+$password = "W5y00t0x?";
 $dbname = "garagedb";
 
 

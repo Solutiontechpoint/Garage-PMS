@@ -1,8 +1,8 @@
 <?php 	
 
 $localhost = "localhost";
-$username = "root";
-$password = "password";
+$username = "garageuser";
+$password = "W5y00t0x?";
 $dbname = "garagedb";
 $store_url = "http://localhost/php-inventory/";
 // db connection
