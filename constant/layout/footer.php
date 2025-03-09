@@ -9,7 +9,8 @@
         </div>
           
     </div>
-    
+    <div class="" style="color: rgb(156, 159, 166); float: left; position: fixed; bottom: 0px; left: 0px; right: 0px; padding: 10px; background: rgb(255, 255, 255); text-align: center;">
+        <div>Copyright © 2025 Developed by <a href="https://solutiontechservices.com" target="_blank">Solution Tech Services</a></div></div>
     
     <script src="assets/js/lib/jquery/jquery.min.js"></script>
     <script src="assets/js/lib/bootstrap/js/popper.min.js"></script>
@@ -27,7 +28,7 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="assets/js/custom.min.js"></script>
     <script src="assets/js/lib/datatables/datatables.min.js"></script>
-    <script src="assets/js/lib/datatables/datatables.js"></script>
+   
     <script src="assets/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
     <script src="assets/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
     <script src="assets/js/lib/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
@@ -53,6 +54,7 @@
     <script src="assets/js/lib/html5-editor/wysihtml5-init.js"></script>
 
 <script>
+
 function alphaOnly(event) {
   var key = event.keyCode;
   return ((key >= 65 && key <= 90) || key == 8);
