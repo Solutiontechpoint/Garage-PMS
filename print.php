@@ -116,7 +116,7 @@ $query=$connect->query($que);
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-4 col-sm-5">
-                                             <img style="height: 250px;     padding-left: 316px;" src="https://thumbs.dreamstime.com/b/grunge-blue-signature-word-round-rubber-seal-stamp-white-background-171945013.jpg" >
+                                             <!-- <img style="height: 250px;     padding-left: 316px;" src="https://thumbs.dreamstime.com/b/grunge-blue-signature-word-round-rubber-seal-stamp-white-background-171945013.jpg" > -->
                                         </div>
                                         <div class="col-lg-4 col-sm-5 ml-auto">
                                             <table class="table table-clear">
@@ -159,7 +159,7 @@ $query=$connect->query($que);
                                     </div>
                                 </div>
                                 <div class="card-footer bg-white">
-                                    <img style="height: 150px;" src="https://upload.wikimedia.org/wikipedia/commons/2/25/Ivory_Signature.png" >
+                                    <!-- <img style="height: 150px;" src="https://upload.wikimedia.org/wikipedia/commons/2/25/Ivory_Signature.png" > -->
                                    
 
                                     <p class="mb-0">Thank you for your business !</p>
