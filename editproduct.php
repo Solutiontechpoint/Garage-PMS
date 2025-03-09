@@ -108,7 +108,7 @@ $sql="SELECT * from product where  product_id='".$_GET['id']."'";
                                             <div class="row">
                                                 <label class="col-sm-3 control-label">Quantity</label>
                                                 <div class="col-sm-9">
-                                                  <input type="text" class="form-control" id="editQuantity" value="<?php echo $result['quantity']?>" name="editQuantity" autocomplete="off">
+                                                  <input type="number" class="form-control" id="editQuantity" value="<?php echo $result['quantity']?>" name="editQuantity" autocomplete="off">
                                                 </div>
                                             </div>
                                         </div>
@@ -116,7 +116,15 @@ $sql="SELECT * from product where  product_id='".$_GET['id']."'";
                                             <div class="row">
                                                 <label class="col-sm-3 control-label">Rate</label>
                                                 <div class="col-sm-9">
-                                                   <input type="text" class="form-control" id="editRate" value="<?php echo $result['rate']?>" name="editRate" autocomplete="off">
+                                                   <input type="number" class="form-control" id="editRate" value="<?php echo $result['rate']?>" name="editRate" autocomplete="off">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <label class="col-sm-3 control-label">Category</label>
+                                                <div class="col-sm-9">
+                                                   <input type="text" class="form-control" id="editCategory" value="<?php echo $result['category']?>" name="editCategory" autocomplete="off">
                                                 </div>
                                             </div>
                                         </div>
@@ -138,7 +146,7 @@ $sql="SELECT * from product where  product_id='".$_GET['id']."'";
                                             </div>
                                         </div>
                                     </div>
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <div class="row">
                                                 <label class="col-sm-3 control-label">Category Name</label>
                                                 <div class="col-sm-9">
@@ -156,7 +164,7 @@ $sql="SELECT * from product where  product_id='".$_GET['id']."'";
 
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
 
                                         <div class="form-group">
                                             <div class="row">

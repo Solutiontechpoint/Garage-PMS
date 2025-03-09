@@ -48,7 +48,7 @@ $result = $connect->query($sql);
                                                 <th>Client Name</th>
                                                 <th>Gender</th>
                                                 <th>Mobile NO</th>
-                                                <th>Reffering</th>
+                                                <th>Referral Number</th>
                                                 <th>Address</th>
                                                 <th>Action</th>
                                             </tr>

@@ -12,7 +12,7 @@ if($_POST) {
   $quantity 		= $_POST['quantity'];
   $rate 			= $_POST['rate'];
   $brandName 		= $_POST['brandName'];
-  $categoryName 	= $_POST['categoryName'];
+  $categoryName 	= $_POST['category'];
   $productStatus 	= $_POST['productStatus'];
 	//$type = explode('.', $_FILES['productImage']['name']);
 	$image = $_FILES['productImage']['name'];
@@ -29,7 +29,7 @@ if (move_uploaded_file($_FILES['productImage']['tmp_name'], $target)) {
       echo $msg;exit;
     }
 	
-				$sql = "INSERT INTO product (product_name, product_image, brand_id, categories_id, quantity, rate, active, status) 
+				$sql = "INSERT INTO product (product_name, product_image, brand_id, category, quantity, rate, active, status) 
 				VALUES ('$productName', '$image', '$brandName', '$categoryName', '$quantity', '$rate', '$productStatus', 1)";
 
 				if($connect->query($sql) === TRUE) {

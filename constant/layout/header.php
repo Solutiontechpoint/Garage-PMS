@@ -98,13 +98,13 @@ include('./constant/check.php');
           </li>
             <?php }?>
  <?php if(isset($_SESSION['userId']) && $_SESSION['userId']==1) { ?>
-            <li class="nav-item dropdown">
+            <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-list"></i> Categories</a>
             <div class="dropdown-menu" aria-labelledby="dropdown08">
               <a class="dropdown-item" href="add-category.php">Add Category</a>
               <a class="dropdown-item" href="categories.php">Manage Categories</a>
             </div>
-          </li>
+          </li> -->
            <?php }?>
            <?php if(isset($_SESSION['userId']) && $_SESSION['userId']==1) { ?>
             <li class="nav-item dropdown">

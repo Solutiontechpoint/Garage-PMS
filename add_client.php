@@ -74,7 +74,7 @@
                                         </div>
                                         <div class="form-group">
                                             <div class="row">
-                                                <label class="col-sm-3 control-label">Reffering</label>
+                                                <label class="col-sm-3 control-label">Referral Number</label>
                                                 <div class="col-sm-9">
                                                                                                     <input type="text" class="form-control" id="" placeholder="" name="reffering" autocomplete="off" required="" />
 

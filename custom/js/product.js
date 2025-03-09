@@ -45,7 +45,7 @@ $(document).ready(function() {
 			var quantity = $("#quantity").val();
 			var rate = $("#rate").val();
 			var brandName = $("#brandName").val();
-			var categoryName = $("#categoryName").val();
+			var categoryName = $("#category").val();
 			var productStatus = $("#productStatus").val();
 	
 			if(productImage == "") {
@@ -253,7 +253,7 @@ function editProduct(productId = null) {
 					var quantity = $("#editQuantity").val();
 					var rate = $("#editRate").val();
 					var brandName = $("#editBrandName").val();
-					var categoryName = $("#editCategoryName").val();
+					var categoryName = $("#editCategory").val();
 					var productStatus = $("#editProductStatus").val();
 								
 

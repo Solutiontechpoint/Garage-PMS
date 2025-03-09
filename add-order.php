@@ -102,7 +102,7 @@ if($_GET['o'] == 'add') {
                                                 $new=sprintf('%05d',intval($row['cnt'])+1);
 
                                                 ?>
-                                                <input type="text" class="form-control" placeholder="Invoice Number" autocomplete="off" value="<?php echo $new; ?>" required/>
+                                                <input type="text" class="form-control" placeholder="Invoice Number" autocomplete="off" value="<?php echo $new; ?>" required readonly/>
                                                </div>
 
 

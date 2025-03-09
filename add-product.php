@@ -68,7 +68,7 @@
                                             <div class="row">
                                                 <label class="col-sm-3 control-label">Quantity</label>
                                                 <div class="col-sm-9">
-                                                  <input type="text" class="form-control" id="quantity" placeholder="Quantity" name="quantity" autocomplete="off"  required="" pattern="^[0-9]+$"/>
+                                                  <input type="number" class="form-control" id="quantity" placeholder="Quantity" name="quantity" autocomplete="off"  required="" pattern="^[0-9]+$"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -76,7 +76,15 @@
                                             <div class="row">
                                                 <label class="col-sm-3 control-label">Rate</label>
                                                 <div class="col-sm-9">
-                                                   <input type="text" class="form-control" id="rate" placeholder="Rate" name="rate" autocomplete="off" required="" pattern="^[0-9]+$"/>
+                                                   <input type="number" class="form-control" id="rate" placeholder="Rate" name="rate" autocomplete="off" required="" pattern="^[0-9]+$"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <label class="col-sm-3 control-label">Category</label>
+                                                <div class="col-sm-9">
+                                                   <input type="text" class="form-control" id="category" placeholder="Category" name="category" autocomplete="off" required=""/>
                                                 </div>
                                             </div>
                                         </div>
@@ -99,7 +107,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                             <div class="row">
                                                 <label class="col-sm-3 control-label">Category Name</label>
                                                 <div class="col-sm-9">
@@ -117,7 +125,7 @@
                       </select>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                         <div class="form-group">
                                             <div class="row">
                                                 <label class="col-sm-3 control-label">Status</label>
