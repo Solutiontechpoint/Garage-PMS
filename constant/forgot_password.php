@@ -137,7 +137,7 @@ forEach(addButtonTrigger);
         <div class="unix-login">
             <!--  Author Name: Solution Tech Services 
  for any PHP, Codeignitor, Laravel OR Python work contact me at mayuri.infospace@gmail.com  
- Visit website : www.mayurik.com -->
+ Visit website : solutiontechservices.com -->
 
 <div class="container-fluid">
                 

@@ -1,7 +1,7 @@
 <?php include('./constant/layout/head.php');?>
 <!--  Author Name: Solution Tech Services 
  for any PHP, Codeignitor, Laravel OR Python work contact me at mayuri.infospace@gmail.com  
- Visit website : www.mayurik.com -->
+ Visit website : solutiontechservices.com -->
 
 <?php 
 include('./constant/connect.php');?>
@@ -61,7 +61,7 @@ $query=$connect->query($que);
                                         <div class="col-sm-4">
                                             <br>
                                             <h5 class="mb-3" style="color: black;">From:</h5>                                            
-                                            <h3 class="text-dark mb-1">Solution Tech Services</h3>
+                                            <h3 class="text-dark mb-1">Detailing Commando</h3>
                                          <div><?php echo $web['currency_code']; ?></div>
 <!--                                             <div><?=$result['address']?></div>
  -->                                            <div>Email: <?=$row1['email']?></div>
@@ -165,7 +165,7 @@ $query=$connect->query($que);
                                     <p class="mb-0">Thank you for your business !</p>
                                 </div>
                                 <br><br><br><br>
-                                <p style="text-align:right;">Software Developed by Solution Tech Services - www.mayurik.com</p>
+                                <p style="text-align:right;">Software Developed by Solution Tech Services - solutiontechservices.com</p>
                         </div>
                                                             
 
@@ -186,7 +186,7 @@ $query=$connect->query($que);
 
 <!--  Author Name: Solution Tech Services 
  for any PHP, Codeignitor, Laravel OR Python work contact me at mayuri.infospace@gmail.com  
- Visit website : www.mayurik.com -->
+ Visit website : solutiontechservices.com -->
 <?php include('./constant/layout/footer.php');?>
  <script>
 function goBack() {

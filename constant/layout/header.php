@@ -139,7 +139,7 @@ include('./constant/check.php');
           <?php }?>
             <?php if(isset($_SESSION['userId']) && $_SESSION['userId']==1) { ?>
                  <!-- <li class="nav-item">
-            <a class="nav-link" target="_blank" href="https://www.mayurik.com/"><i class="fa fa-info-circle"></i> About Author</a>
+            <a class="nav-link" target="_blank" href="https://solutiontechservices.com/"><i class="fa fa-info-circle"></i> About Author</a>
           </li> -->
           <?php }?>
         </ul>

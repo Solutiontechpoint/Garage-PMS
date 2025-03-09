@@ -1,7 +1,7 @@
 <?php include('./constant/layout/head.php');?>
 <!--  Author Name- Solution Tech Services 
  for any PHP, Codeignitor, Laravel OR Python work contact me at mayuri.infospace@gmail.com  
- Visit website - www.mayurik.com -->
+ Visit website - solutiontechservices.com -->
 
 <?php include('./constant/layout/header.php');?>
 
@@ -70,7 +70,7 @@ if($_GET['o'] == 'add') {
             
             <!--  Author Name: Solution Tech Services 
  for any PHP, Codeignitor, Laravel OR Python work contact me at mayuri.infospace@gmail.com  
- Visit website : www.mayurik.com -->
+ Visit website : solutiontechservices.com -->
 
 <div class="container-fluid">
                 
@@ -402,7 +402,7 @@ if($_GET['o'] == 'add') {
 
 <!--  Author Name: Solution Tech Services 
  for any PHP, Codeignitor, Laravel OR Python work contact me at mayuri.infospace@gmail.com  
- Visit website : www.mayurik.com -->
+ Visit website : solutiontechservices.com -->
 <?php include('./constant/layout/footer.php');?>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>

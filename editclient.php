@@ -1,7 +1,7 @@
 <?php include('./constant/layout/head.php');?>
 <!--  Author Name- Solution Tech Services 
  for any PHP, Codeignitor, Laravel OR Python work contact me at mayuri.infospace@gmail.com  
- Visit website - www.mayurik.com -->
+ Visit website - solutiontechservices.com -->
 
 <?php include('./constant/layout/header.php');?>
 
@@ -33,7 +33,7 @@
             
             <!--  Author Name: Solution Tech Services 
  for any PHP, Codeignitor, Laravel OR Python work contact me at mayuri.infospace@gmail.com  
- Visit website : www.mayurik.com -->
+ Visit website : solutiontechservices.com -->
 
 <div class="container-fluid">
                 
@@ -114,7 +114,7 @@
 
 <!--  Author Name: Solution Tech Services 
  for any PHP, Codeignitor, Laravel OR Python work contact me at mayuri.infospace@gmail.com  
- Visit website : www.mayurik.com -->
+ Visit website : solutiontechservices.com -->
 <?php include('./constant/layout/footer.php');?>
 
 

@@ -27,7 +27,7 @@
     }
 }
 </style>
-    <title>Solution Tech Services | Garage Billing Software - Solution Tech Services</title>
+    <title>Detailing Commando</title>
 
     <link href="assets/css/lib/chartist/chartist.min.css" rel="stylesheet">
   <link href="assets/css/lib/owl.carousel.min.css" rel="stylesheet" />
