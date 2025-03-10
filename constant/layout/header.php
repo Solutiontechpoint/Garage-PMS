@@ -133,7 +133,7 @@ include('./constant/check.php');
             <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog"></i> Setting</a>
             <div class="dropdown-menu" aria-labelledby="dropdown08">
               <a class="dropdown-item" href="manage_website.php">Web Management</a>
-              <a class="dropdown-item" href="email_config.php">Email Management</a>
+              <!-- <a class="dropdown-item" href="email_config.php">Email Management</a> -->
             </div>
           </li>
           <?php }?>

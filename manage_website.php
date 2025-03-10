@@ -155,25 +155,26 @@ while($row=mysqli_fetch_array($query))
                             <div class="card-body">
                                 <div class="input-states">
                                     <form class="form-horizontal" method="POST" enctype="multipart/form-data">
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <div class="row">
                                                 <label class="col-sm-3 control-label">Title</label>
                                                 <div class="col-sm-9">
                                                     <input type="text"  value="<?php echo $title;?>"  name="title" class="form-control">
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
 
                                       
 
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                           <div class="row">
                                            <label class="col-sm-3 control-label">Footer</label>
                                             <div class="col-sm-9">
                                         <textarea class="textarea_editor form-control" name="footer" rows="5" placeholder="Enter text ..." style="height:300px;"><?php echo $footer;?></textarea>
                                       </div>
                                         </div>
-                                    </div>
+                                    </div> -->
+
    <div class="form-group">
                                             <div class="row">
                                                 <label class="col-sm-3 control-label">Mobile No.</label>
@@ -202,7 +203,7 @@ while($row=mysqli_fetch_array($query))
                                             </div>
                                         </div>
 
-                                         <div class="form-group">
+                                         <!-- <div class="form-group">
                                             <div class="row">
                                                 <label class="col-sm-3 control-label">Website Logo</label>
                                                 <div class="col-sm-9">
@@ -211,8 +212,8 @@ while($row=mysqli_fetch_array($query))
                           <input type="file" class="form-control" name="website_image">
                                                 </div>
                                             </div>
-                                        </div>  
-  
+                                        </div>   -->
+<!--   
                                          <div class="form-group">
                                             <div class="row">
                                                 <label class="col-sm-3 control-label">Invoice Logo</label>
@@ -222,10 +223,10 @@ while($row=mysqli_fetch_array($query))
                           <input type="file" class="form-control" name="invoice_image">
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
 
 
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <div class="row">
                                                 <label class="col-sm-3 control-label">Login Page Logo</label>
                                                 <div class="col-sm-9">
@@ -234,10 +235,10 @@ while($row=mysqli_fetch_array($query))
                           <input type="file" class="form-control" name="login_image">
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
 
 
-                                          <div class="form-group">
+                                          <!-- <div class="form-group">
                                             <div class="row">
                                                 <label class="col-sm-3 control-label">Background Image For Login Page</label>
                                                 <div class="col-sm-9">
@@ -246,7 +247,7 @@ while($row=mysqli_fetch_array($query))
                           <input type="file" class="form-control" name="back_login_image">
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
 
 
 

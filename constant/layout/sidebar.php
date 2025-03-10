@@ -75,7 +75,7 @@
                                
                                <li><a href="manage_website.php">Web Management</a></li>
                            
-                              <li><a href="email_config.php">Email Management</a></li>
+                              <!-- <li><a href="email_config.php">Email Management</a></li> -->
                                
                             </ul>
                         </li> 
