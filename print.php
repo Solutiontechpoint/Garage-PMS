@@ -55,7 +55,7 @@ $query=$connect->query($que);
                                                 $web=mysqli_fetch_array($query);
                                             ?>
                                             <br>
-                                            <image class="profile-img" src="./assets/uploadImage/Logo/<?=$web['invoice_logo']?>" style="height:120px;width:auto;">
+                                            <image class="profile-img" src="./assets/uploadImage/Logo/logo.jpg" style="height:100px;width:auto;">
                                                 
                                         </div>
                                         <div class="col-sm-4">

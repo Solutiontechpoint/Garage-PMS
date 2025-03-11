@@ -60,13 +60,15 @@ $result = $connect->query($sql);
                                        <tbody>
                                         <?php
 foreach ($result as $row) {
-     
+    $sql="SELECT * from tbl_client where id='".$row['client_name']."'";
+    $result1 = $connect->query($sql);
+    $row1=$result1->fetch_assoc();
 
     ?>
                                         <tr>
                                             <td><?php echo $row['order_id'] ?></td>
                                             <td><?php echo $row['order_date'] ?></td>
-                                             <td><?php echo $row['client_name'] ?></td>
+                                             <td><?php echo $row1['name'] ?></td>
                                               <td><?php echo $row['client_contact'] ?></td>
                                                <td><?php  ?></td>
                                             <td><?php  if($row['payment_status']==1)
