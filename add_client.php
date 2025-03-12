@@ -68,7 +68,7 @@
                                                 <label class="col-sm-3 control-label">Mobile No
 </label>
                                                 <div class="col-sm-9">
-                        <input type="text" class="form-control" id="" placeholder="" name="mob_no" autocomplete="off" required="" />
+                        <input type="tel" class="form-control" id="" placeholder="" name="mob_no" autocomplete="off" required="" />
                                                 </div>
                                             </div>
                                         </div>
@@ -76,7 +76,7 @@
                                             <div class="row">
                                                 <label class="col-sm-3 control-label">Referral Number</label>
                                                 <div class="col-sm-9">
-                                                                                                    <input type="text" class="form-control" id="" placeholder="" name="reffering" autocomplete="off" required="" />
+                                                                                                    <input type="text" class="form-control" id="" placeholder="" name="reffering" autocomplete="off" />
 
                                             </div>
                                         </div>

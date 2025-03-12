@@ -10,12 +10,13 @@ extract($_POST);
     $reffering = $_POST['reffering']; 
         $address = $_POST['address']; 
                 $gender = $_POST['gender']; 
+				$mob_no = $_POST['mob_no']; 
 
 
 
 
  	
-				$sql = "INSERT INTO `tbl_client`(`name`, `mob_no`, `reffering`, `address`, `gender`)VALUES ('$name', '$mob_no', '$reffering', '$address','$gender')";
+				$sql = "INSERT INTO `tbl_client`(`name`, `mob_no`, `reffering`, `address`, `gender`, `delete_status`)VALUES ('$name', '$mob_no', '$reffering', '$address','$gender',0)";
 
 				if($connect->query($sql) === TRUE) {
 					$valid['success'] = true;
