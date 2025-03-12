@@ -72,7 +72,7 @@ foreach ($result as $row) {
     ?>
                                         <tr>
                                             <td><?php echo $row['product_id'] ?></td>
-                                            <td><img src="assets/myimages/<?php echo $row['product_image'];?>" style="width: 80px; height: 80px;"></td>
+                                            <td><img src="assets/myimages/<?php echo $row['product_image'] ? $row['product_image']: 'default-product-image.jpg';?>" style="width: 80px; height: 80px;"></td>
                                             <td><?php echo $row['product_name'] ?></td>
                                              <td><?php echo $row['rate'] ?></td>
                                               <td><?php echo $row['quantity'] ?></td>

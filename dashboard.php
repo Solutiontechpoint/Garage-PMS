@@ -76,7 +76,7 @@ $connect->close();
                             </div>
                         </div>
                     </div>
-                    <?php if(isset($_SESSION['userId']) && $_SESSION['userId']==1) { ?>
+                    <?php if(isset($_SESSION['userId']) && $_SESSION['userId']!=1000) { ?>
                     <div class="col-md-4 dashboard">
                         <div class="card" style="background:#A02CFA ">
                             <div class="media widget-ten">
@@ -95,7 +95,7 @@ $connect->close();
                         </div>
                     </div>
                    <?php }?>
-                   <?php if(isset($_SESSION['userId']) && $_SESSION['userId']==1) { ?>
+                   <?php if(isset($_SESSION['userId']) && $_SESSION['userId']!=1000) { ?>
                      <div class="col-md-4 dashboard">
                         <div class="card"  style="background-color: #F94687 ">
                             <div class="media widget-ten">
@@ -148,7 +148,7 @@ $connect->close();
     </div>
 
 
-    <?php if(isset($_SESSION['userId']) && $_SESSION['userId']==1) { ?>
+    <?php if(isset($_SESSION['userId']) && $_SESSION['userId']!=1000) { ?>
      <div class="col-md-12">
 <div class="card">
                             <div class="card-header">
