@@ -48,6 +48,14 @@
                                                 <label class="col-sm-3 control-label">Username</label>
                                                 <div class="col-sm-9">
                                                   <input type="text" name="userName" id="username" class="form-control" placeholder="Username" required="" pattern="^[a-zA-z0-9]+$"/>
+                                                  <script>
+  document.getElementById("username").oninvalid = function(event) {
+    event.target.setCustomValidity("Username must contain only letters and numbers (no spaces)");
+  };
+  document.getElementById("username").oninput = function(event) {
+    event.target.setCustomValidity("");
+  };
+</script>
                                                 </div>
                                             </div>
                                         </div>

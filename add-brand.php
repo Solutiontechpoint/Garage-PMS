@@ -47,7 +47,7 @@
                                             <div class="row">
                                                 <label class="col-sm-3 control-label">Brand Name</label>
                                                 <div class="col-sm-9">
-                                                  <input type="text"  class="form-control"id="brandName" placeholder="Brand Name" name="brandName"  required="" pattern="^[a-zA-z]+$"/>
+                                                  <input type="text"  class="form-control"id="brandName" placeholder="Brand Name" name="brandName"  required=""/>
                                                 </div>
                                             </div>
                                         </div>
