@@ -141,6 +141,37 @@ if($_GET['o'] == 'add') {
           </div>
         </div> 
       </div>  
+
+ <div class="form-group">
+                                            <div class="row">
+                                                <label class="col-sm-2 control-label">Vehicle Type</label>
+                                                <div class="col-sm-4">
+                                                   <select class="form-control select2" id="clientName" name="vtype">
+                                                <option value="" readonly>~~SELECT~~</option>
+                                         <option <?php if($data['vehicle_type']=="twowheeler"){ ?> selected="selected" <?php }?> value='twowheeler' >Two Wheeler</option>
+                                                  
+                                                   
+                                         <option <?php if($data['vehicle_type']=="threewheeler"){ ?> selected="selected" <?php }?> value='threewheeler' >Three Wheeler</option>
+  
+                                         <option <?php if($data['vehicle_type']=="fourwheeler"){ ?> selected="selected" <?php }?> value='fourwheeler' >Four Wheeler </option>
+  
+ 
+                                                
+                                               </select>
+                                             </div>
+
+                                                <label class="col-sm-2 control-label">Vehicle Name</label>
+                                                <div class="col-sm-4">
+                                               
+                          <input type="text" class="form-control" id="mob_no" name="vname" value="<?php echo $data['vehicle_name'] ?>"   required style="color:black;" >
+                                                </div>
+                                            
+
+                                            </div>
+
+                                        </div>
+
+
           <div class="form-group">
                                             <div class="row">
 
@@ -157,35 +188,7 @@ if($_GET['o'] == 'add') {
                                                </div>
                                             </div>
                                         </div>
-                                         <div class="form-group">
-                                            <div class="row">
-                                                <label class="col-sm-2 control-label">Vehicle Type</label>
-                                                <div class="col-sm-4">
-                                                   <select class="form-control select2" id="clientName" name="vtype">
-                                                <option value="" readonly>~~SELECT~~</option>
-                                         <option <?php if($data['vehicle_type']=="twowheeler"){ ?> selected="selected" <?php }?> value='twowheeler' >Two Wheeler</option>
-                                                  
-                                                   
-                                         <option <?php if($data['vehicle_type']=="threewheeler"){ ?> selected="selected" <?php }?> value='threewheeler' >Three Wheeler</option>
-  
-                                         <option <?php if($data['vehicle_type']=="fourwheeler"){ ?> selected="selected" <?php }?> value='fourwheeler' >Four Wheeler </option>
-  
-
-                                                
-                                               </select>
-                                             </div>
-
-                                                <label class="col-sm-2 control-label">Vehicle Name</label>
-                                                <div class="col-sm-4">
-                                               
-                          <input type="text" class="form-control" id="mob_no" name="vname" value="<?php echo $data['vehicle_name'] ?>"   required style="color:black;" >
-                                                </div>
-                                            
-
-                                            </div>
-
-                                        </div>
-
+                                       
                                         <div class="form-group">
                                             <div class="row">
 

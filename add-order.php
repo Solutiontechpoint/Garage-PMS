@@ -146,6 +146,30 @@ if($_GET['o'] == 'add') {
 
                                         <div class="form-group">
                                             <div class="row">
+                                                <label class="col-sm-2 control-label">Vehicle Type</label>
+                                                <div class="col-sm-4">
+                                                   <select class="form-control select2" id="vtype" name="vtype">
+                                                <option value="" readonly>~~SELECT~~</option>
+                                                <option value="twowheeler">Two Wheeler </option>
+                                                <option value="threewheeler">Three Wheeler </option>
+                                                <option value="fourwheeler">Four Wheeler</option>
+                        
+                                               </select>
+                                             </div>
+
+                                                <label class="col-sm-2 control-label">Number Plate</label>
+                                                <div class="col-sm-4">
+                                               
+                          <input type="text" class="form-control" id="vname" name="vname"   required style="color:black;" >
+                                                </div>
+                                            
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="row">
 
                                               <label class="col-sm-2 control-label">Mechanic Name</label>
                                                <div class="col-sm-4">
@@ -159,29 +183,6 @@ if($_GET['o'] == 'add') {
                                                  <input type="text" class="form-control" id="orderDate" name="sname" autocomplete="off" />
                                                </div>
                                             </div>
-                                        </div>
-                                         <div class="form-group">
-                                            <div class="row">
-                                                <label class="col-sm-2 control-label">Vehicle Type</label>
-                                                <div class="col-sm-4">
-                                                   <select class="form-control select2" id="clientName" name="vtype">
-                                                <option value="" readonly>~~SELECT~~</option>
-                                                <option value="twowheeler">Two Wheeler </option>
-                                                <option value="threewheeler">Three Wheeler </option>
-                                                <option value="fourwheeler">Four Wheeler</option>
-                        
-                                               </select>
-                                             </div>
-
-                                                <label class="col-sm-2 control-label">Number Plate</label>
-                                                <div class="col-sm-4">
-                                               
-                          <input type="text" class="form-control" id="mob_no" name="vname"   required style="color:black;" >
-                                                </div>
-                                            
-
-                                            </div>
-
                                         </div>
 
                                         <div class="form-group">
@@ -1248,10 +1249,13 @@ function paymentOrder(orderId = null) {
             url: 'php_action/ajax_represent.php',
             type: 'post',
             data: {customer_id:customer_id},
+            dataType: 'json', 
           
                         success:function(data){
               //alert();
-          $("#mob_no").val(data);
+          $("#mob_no").val(data.mob_no);
+          $("#vname").val(data.vehicle_name);
+          $("#vtype").val(data.vehicle_type).trigger('change');
 
                 
             }

@@ -81,6 +81,34 @@
                                             </div>
                                         </div>
                                     </div>
+                                   
+                                    <div class="form-group">
+                                            <div class="row">
+                                                <label class="col-sm-3 control-label">Vehicle Type</label>
+                                                <div class="col-sm-9">
+                                                   <select class="form-control select2" id="clientName" name="vtype">
+                                                <option value="" readonly>~~SELECT~~</option>
+                                                <option value="twowheeler">Two Wheeler </option>
+                                                <option value="threewheeler">Three Wheeler </option>
+                                                <option value="fourwheeler">Four Wheeler</option>
+                        
+                                               </select>
+                                             </div>
+                                             </div>
+                                             </div>
+                                             <div class="form-group">
+                                             <div class="row">
+                                                <label class="col-sm-3 control-label">Number Plate</label>
+                                                <div class="col-sm-9">
+                                               
+                          <input type="text" class="form-control" id="mob_no" name="vname" style="color:black;" >
+                                                </div>
+                                            
+
+                                            </div>
+
+                                        </div>
+
                                      <div class="form-group">
                                             <div class="row">
                                                 <label class="col-sm-3 control-label">Address</label>

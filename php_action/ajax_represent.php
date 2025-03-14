@@ -27,7 +27,7 @@ print_r($service1);
         $result1 = $connect->query($sql1);
         $row = $result1->fetch_assoc();
 
-      echo$mob_no = $row['mob_no'];
+      echo json_encode(array('mob_no' => $row['mob_no'] , 'vehicle_name' => $row['vehicle_name'], 'vehicle_type' => $row['vehicle_type']));
       
         /*$result1=$conn->query($sql_service1);  
         $service1 = mysqli_fetch_array($result1);

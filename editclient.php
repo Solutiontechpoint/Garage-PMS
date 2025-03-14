@@ -84,11 +84,46 @@
                                             <div class="row">
                                                 <label class="col-sm-3 control-label">Referral Number</label>
                                                 <div class="col-sm-9">
-                                                                                                    <input type="text" class="form-control" id="" placeholder="" name="reffering" autocomplete="off" required="" value="<?php  echo$result['reffering'];?>" />
+                                                                                                    <input type="text" class="form-control" id="" placeholder="" name="reffering" autocomplete="off" value="<?php  echo$result['reffering'];?>" />
 
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div class="form-group">
+                                            <div class="row">
+                                                <label class="col-sm-3 control-label">Vehicle Type</label>
+                                                <div class="col-sm-9">
+                                                   <select class="form-control select2" id="clientName" name="vtype">
+                                                <option value="" readonly>~~SELECT~~</option>
+                                         <option <?php if($result['vehicle_type']=="twowheeler"){ ?> selected="selected" <?php }?> value='twowheeler' >Two Wheeler</option>
+                                                  
+                                                   
+                                         <option <?php if($result['vehicle_type']=="threewheeler"){ ?> selected="selected" <?php }?> value='threewheeler' >Three Wheeler</option>
+  
+                                         <option <?php if($result['vehicle_type']=="fourwheeler"){ ?> selected="selected" <?php }?> value='fourwheeler' >Four Wheeler </option>
+  
+ 
+                                                
+                                               </select>
+                                             </div>
+                                             </div>
+                                             </div>
+
+                                             <div class="form-group">
+                                             <div class="row">
+
+                                                <label class="col-sm-3 control-label">Vehicle Name</label>
+                                                <div class="col-sm-9">
+                                               
+                          <input type="text" class="form-control" id="mob_no" name="vname" value="<?php echo $result['vehicle_name'] ?>"  style="color:black;" >
+                                                </div>
+                                            
+
+                                            </div>
+
+                                        </div>
+
                                      <div class="form-group">
                                             <div class="row">
                                                 <label class="col-sm-3 control-label">Address</label>

@@ -7,15 +7,17 @@ $id = $_GET['id'];
 //echo $brandId;exit;
 if($_POST) {	
 //echo "123";exit;
-	 $name = $_POST['name']; 
-    $reffering = $_POST['reffering']; 
-        $address = $_POST['address']; 
+	            $name = $_POST['name']; 
+                $reffering = $_POST['reffering']; 
+                $address = $_POST['address']; 
                 $gender = $_POST['gender']; 
                 $mob_no = $_POST['mob_no']; 
+				$vehicleName = $_POST['vname'];
+				$vehicleType = $_POST['vtype'];
 
 
 //echo $brandId;exit;
-	$sql = "UPDATE tbl_client SET name = '$name', reffering = '$reffering',address = '$address', gender = '$gender',mob_no = '$mob_no' WHERE id = '$id'";
+	$sql = "UPDATE tbl_client SET name = '$name', reffering = '$reffering',address = '$address', gender = '$gender',mob_no = '$mob_no',vehicle_type = '$vehicleType',vehicle_name = '$vehicleName' WHERE id = '$id'";
 //echo $sql;exit;
 	if($connect->query($sql) === TRUE) {
 	 	$valid['success'] = true;

@@ -376,6 +376,12 @@ ADD COLUMN `category` VARCHAR(255) NOT NULL;
 ALTER TABLE `product` 
 MODIFY COLUMN `categories_id` INT(11) NULL;
 
+ALTER TABLE `tbl_client` 
+ADD COLUMN `vehicle_type` varchar(50) NULL;
+
+ALTER TABLE `tbl_client` 
+ADD COLUMN `vehicle_name` varchar(50) NULL;
+
 
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
