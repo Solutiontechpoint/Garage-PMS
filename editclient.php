@@ -113,7 +113,7 @@
                                              <div class="form-group">
                                              <div class="row">
 
-                                                <label class="col-sm-3 control-label">Vehicle Name</label>
+                                                <label class="col-sm-3 control-label">Vehicle Number</label>
                                                 <div class="col-sm-9">
                                                
                           <input type="text" class="form-control" id="mob_no" name="vname" value="<?php echo $result['vehicle_name'] ?>"  style="color:black;" >

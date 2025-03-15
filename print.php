@@ -116,7 +116,7 @@ $query=$connect->query($que);
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-4 col-sm-5">
-                                             <!-- <img style="height: 250px;     padding-left: 316px;" src="https://thumbs.dreamstime.com/b/grunge-blue-signature-word-round-rubber-seal-stamp-white-background-171945013.jpg" > -->
+                                             <img style="height: 250px;     padding-left: 316px;" src="./assets/uploadImage/Logo/rubber_stamp.png" >
                                         </div>
                                         <div class="col-lg-4 col-sm-5 ml-auto">
                                             <table class="table table-clear">
@@ -137,12 +137,14 @@ $query=$connect->query($que);
                                                     </tr>
                                                     <tr>
                                                         <td class="left">
-                                                            <strong class="text-dark">GST (<?=$row['gst_rate']?>%)</strong>
+                                                            <strong class="text-dark">GST (18%)</strong>
                                                         </td>
-                                                        <td class="right"><?php
-                                                        $gst_rate=($row['sub_total']-$discount)*($row['gstn']/100);
-                                                        echo number_format($gst_rate,2);
-                                                        ?></td>
+                                                        <td class="right">
+                                                        <?=$row['gstn']?>
+                                                        <!-- <?php 
+                                                         $gst_rate=($row['sub_total']-$discount)*($row['gstn']/100);
+                                                         echo number_format($gst_rate,2);?> -->
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td class="left">

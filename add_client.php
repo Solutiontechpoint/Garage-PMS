@@ -98,7 +98,7 @@
                                              </div>
                                              <div class="form-group">
                                              <div class="row">
-                                                <label class="col-sm-3 control-label">Number Plate</label>
+                                                <label class="col-sm-3 control-label">Vehicle Number</label>
                                                 <div class="col-sm-9">
                                                
                           <input type="text" class="form-control" id="mob_no" name="vname" style="color:black;" >

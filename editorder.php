@@ -160,7 +160,7 @@ if($_GET['o'] == 'add') {
                                                </select>
                                              </div>
 
-                                                <label class="col-sm-2 control-label">Vehicle Name</label>
+                                                <label class="col-sm-2 control-label">Vehicle Number</label>
                                                 <div class="col-sm-4">
                                                
                           <input type="text" class="form-control" id="mob_no" name="vname" value="<?php echo $data['vehicle_name'] ?>"   required style="color:black;" >

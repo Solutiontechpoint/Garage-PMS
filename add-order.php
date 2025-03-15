@@ -157,7 +157,7 @@ if($_GET['o'] == 'add') {
                                                </select>
                                              </div>
 
-                                                <label class="col-sm-2 control-label">Number Plate</label>
+                                                <label class="col-sm-2 control-label">Vehicle Number</label>
                                                 <div class="col-sm-4">
                                                
                           <input type="text" class="form-control" id="vname" name="vname"   required style="color:black;" >
