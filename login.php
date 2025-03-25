@@ -50,10 +50,11 @@ if($_POST) {
       if($mainResult->num_rows == 1) {
         $value = $mainResult->fetch_assoc();
         $user_id = $value['user_id'];
+        $isAdmin = $value['admin'];
 
         // set session
-        $_SESSION['userId'] = $user_id;?>
-
+        $_SESSION['userId'] = $user_id;
+        $_SESSION['isAdmin'] = $isAdmin;?>
       
 
          <div class="popup popup--icon -success js_success-popup popup--visible">
