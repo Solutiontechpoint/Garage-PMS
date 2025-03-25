@@ -28,8 +28,9 @@ if($_POST) {
   $paymentPlace 				= $_POST['paymentPlace'];
   $gstn 				= $_POST['gstn'];
 	$userid 				= $_SESSION['userId'];
+  $showinview 				= isset($_POST['showinview']) ?1 : 0;
 				
-	$sql = "UPDATE orders SET order_date = '$orderDate', client_name = '$clientName', client_contact = '$clientContact',mechanicname = '$mechanicName',supervisor_name = '$supervisorName',vehicle_type = '$vehicleType',vehicle_name = '$vehicleName',delivery_date = '$deliveryDate',delivery_time = '$deliveryTime', sub_total = '$subTotalValue', vat = '$vatValue', total_amount = '$totalAmountValue', discount = '$discount', grand_total = '$grandTotalValue', paid = '$paid', due = '$dueValue', payment_type = '$paymentType', payment_status = '$paymentStatus', order_status = 1 ,user_id = '$userid',payment_place = '$paymentPlace' , gstn = '$gstn' WHERE order_id = {$orderId}";	
+	$sql = "UPDATE orders SET order_date = '$orderDate', client_name = '$clientName', client_contact = '$clientContact',mechanicname = '$mechanicName',supervisor_name = '$supervisorName',vehicle_type = '$vehicleType',vehicle_name = '$vehicleName',delivery_date = '$deliveryDate',delivery_time = '$deliveryTime', sub_total = '$subTotalValue', vat = '$vatValue', total_amount = '$totalAmountValue', discount = '$discount', grand_total = '$grandTotalValue', paid = '$paid', due = '$dueValue', payment_type = '$paymentType', payment_status = '$paymentStatus', order_status = 1 ,user_id = '$userid',payment_place = '$paymentPlace' , gstn = '$gstn', showinview = '$showinview' WHERE order_id = {$orderId}";	
 	$connect->query($sql);
 	$readyToUpdateOrderItem = false;
 	// add the quantity from the order item to product table
