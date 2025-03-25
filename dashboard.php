@@ -13,7 +13,8 @@ $sql = "SELECT * FROM product WHERE status = 1";
 $query = $connect->query($sql);
 $countProduct = $query->num_rows;
 
-$orderSql = "SELECT * FROM orders WHERE order_status = 1";
+$orderSql = "SELECT * FROM orders WHERE order_status = 1" . 
+            (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 1 ? "" : " AND showinview = 1");
 $orderQuery = $connect->query($orderSql);
 $countOrder = $orderQuery->num_rows;
 
@@ -29,7 +30,9 @@ $lowStockSql = "SELECT * FROM product WHERE quantity <= 3 AND status = 1";
 $lowStockQuery = $connect->query($lowStockSql);
 $countLowStock = $lowStockQuery->num_rows;
 
-$userwisesql = "SELECT users.username , SUM(orders.grand_total) as totalorder FROM orders INNER JOIN users ON orders.user_id = users.user_id WHERE orders.order_status = 1 GROUP BY orders.user_id";
+$userwisesql = "SELECT users.username, SUM(orders.grand_total) as totalorder FROM orders INNER JOIN users ON orders.user_id = users.user_id WHERE orders.order_status = 1" . 
+               (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 1 ? "" : " AND orders.showinview = 1") . 
+               " GROUP BY orders.user_id";
 $userwiseQuery = $connect->query($userwisesql);
 $userwieseOrder = $userwiseQuery->num_rows;
 
