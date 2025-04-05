@@ -238,8 +238,9 @@ if($_GET['o'] == 'add') {
                   </div>
                 </td>
                 <td style="padding-left:20px;">                 
-                  <input type="text" name="rate[]" id="rate<?php echo $x; ?>" autocomplete="off" disabled="true" class="form-control" />                  
+                  <input type="text" name="rate[]" style="width:70% !important;display: inline !important;" id="rate<?php echo $x; ?>" autocomplete="off" disabled="true" class="form-control" />                  
                   <input type="hidden" name="rateValue[]" id="rateValue<?php echo $x; ?>" autocomplete="off" class="form-control" />                  
+                  <button type="button" class="btn btn-xs btn-primary" style="display: inline !important;" onclick="editRow(<?php echo $x; ?>)"><i class="fa fa-pencil"></i></button>
                 </td>
               <td style="padding-left:20px;">
                   <div class="form-group">
@@ -407,11 +408,25 @@ if($_GET['o'] == 'add') {
 <?php include('./constant/layout/footer.php');?>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>
+function editRow(rowId) {
+  // Make the rate field editable
+  $('#rate' + rowId).prop('disabled', false);
+  
+  // Add event listener to trigger getTotal on change and update rate value array
+  $('#rate' + rowId).on('change keyup', function() {
+    getTotal(rowId);
+    $("#rateValue" + rowId).val($(this).val()); // update rate value array
+  });
+  
+  // Hide the edit button
+  $('#rate' + rowId).siblings('button').hide();
+}
   $(document).ready(function() {
   $(".select2").select2();
   });
 </script>
 <script>
+
 var manageOrderTable;
 
 $(document).ready(function() {
@@ -841,8 +856,9 @@ function addRow() {
           '</div>'+
         '</td>'+
         '<td style="padding-left:20px;"">'+
-          '<input type="text" name="rate[]" id="rate'+count+'" autocomplete="off" disabled="true" class="form-control" />'+
+          '<input type="text" name="rate[]"  style="width:70% !important;display: inline !important;" id="rate'+count+'" autocomplete="off" disabled="true" class="form-control" />'+
           '<input type="hidden" name="rateValue[]" id="rateValue'+count+'" autocomplete="off" class="form-control" />'+
+          '<button type="button" class="btn btn-xs btn-primary" style="display: inline !important;" onclick="editRow('+count+')"><i class="fa fa-pencil"></i></button>'+
         '</td style="padding-left:20px;">'+
         '<td style="padding-left:20px;">'+
           '<div class="form-group">'+
