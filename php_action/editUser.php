@@ -11,7 +11,7 @@ if($_POST) {
 	$editIsAdmin = $_POST['editIsAdmin'];
 	
 	
-	$sql = "UPDATE users SET username = '$edituserName', password = '$editPassword', admin = '$editIsAdmin'  WHERE user_id = $userid ";
+	$sql = "UPDATE users SET username = '$edituserName', password = '$editPassword', admin = $editIsAdmin  WHERE user_id = $userid ";
 
 	if($connect->query($sql) === TRUE) {
 		$valid['success'] = true;

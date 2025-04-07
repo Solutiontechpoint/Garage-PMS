@@ -103,26 +103,7 @@ if($_GET['o'] == 'add') {
        
         ?>
 
-<?php if(!isset($_SESSION['isAdmin']) || $_SESSION['isAdmin'] == 0) { ?>
-    <input type="hidden" name="showinview" id="showinview" value="1" />
-<?php } else { ?>
-<div style="padding:10px;" class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <div class="float-right">
-                                <div class="custom-control custom-checkbox">
-                                <input type="checkbox"  name="showinview" id="showinview" <?php if($data['showinview'] == 1) {
-              echo "checked";
-            } ?>  />
-                                    <label class="custom-control-label" for="showInView">Show in View</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-<?php } ?>
-
-      <div class="form-group">
+        <div class="form-group">
           <div class="row">
           <label class="col-sm-3 control-label">Order Date</label>
             <div class="col-sm-9">
