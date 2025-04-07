@@ -75,17 +75,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                         <div class="form-group">
-                                            <div class="row">
-                                                <label class="col-sm-3 control-label">Is Admin</label>
-                                                <div class="col-sm-9">
-                                                  <select class="form-control" name="isAdmin" id="isAdmin">
-                                                    <option value="0">No</option>
-                                                    <option value="1">Yes</option>
-                                                  </select>
-                                                </div>
-                                            </div>
-                                        </div>
+                                       
 
                                         <button type="submit" name="create" id="createUserBtn" class="btn btn-primary btn-flat m-b-30 m-t-30">Submit</button>
                                     </form>
