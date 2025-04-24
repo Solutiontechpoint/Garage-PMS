@@ -89,7 +89,7 @@ if($_GET['o'] == 'add') {
                                     <form class="form-horizontal" method="POST" action="php_action/createOrder.php" id="createOrderForm">
 
 
-                                    <?php if(!isset($_SESSION['isAdmin']) || !$_SESSION['isAdmin']) { ?>
+                                    <?php if(true) { ?>
                                     <input type="hidden" name="showinview" value="1">
                                     <?php } else { ?>
                                     <div style="padding:10px;" class="row">

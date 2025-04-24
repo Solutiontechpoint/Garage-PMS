@@ -37,22 +37,22 @@
                         </li>
                     <?php }?>
                         <?php if(isset($_SESSION['userId']) && $_SESSION['userId']!=1000) { ?>
-                        <!-- <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-list"></i><span class="hide-menu">Categories</span></a>
+                        <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-list"></i><span class="hide-menu">Jobcard</span></a>
                             <ul aria-expanded="false" class="collapse">
                            
-                                <li><a href="add-category.php">Add Category</a></li>
+                                <li><a href="add-jobcard.php">Add Jobcard</a></li>
                            
-                                <li><a href="categories.php">Manage Categories</a></li>
+                                <li><a href="jobcard.php">Manage Jobcard</a></li>
                             </ul>
-                        </li> -->
+                        </li>
                     <?php }?>
                     <?php if(isset($_SESSION['userId']) && $_SESSION['userId']!=1000) { ?>
-                        <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-cogs"></i><span class="hide-menu">Parts</span></a>
+                        <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-cogs"></i><span class="hide-menu">Products</span></a>
                             <ul aria-expanded="false" class="collapse">
                            
-                                <li><a href="add-product.php">Add Product</a></li>
+                                <li><a href="add-product.php">Add Products</a></li>
                            
-                                <li><a href="product.php">Manage Product</a></li>
+                                <li><a href="product.php">Manage Products</a></li>
                             </ul>
                         </li>
                     <?php }?>
