@@ -12,8 +12,8 @@ if ($_POST) {
   $supervisorName = $_POST['sname'];
   $vehicleType = $_POST['vtype'];
   $vehicleName = $_POST['vname'];
-  $datetimeIn = $_POST['orderDate'] . ' ' . date('H:i:s'); // could separate if needed
-  $datetimeOut = $_POST['deliverydate'] . ' ' . $_POST['deliverytime'];
+  $datetimeIn = $_POST['orderDate'];
+  $datetimeOut = $_POST['deliverydate'];
   $odometer = $_POST['odometer'];
   $fuelLevel = $_POST['fuel'];
   $itemsInCar = $_POST['items_in_car'];
@@ -34,11 +34,10 @@ if ($_POST) {
   $paymentType = $_POST['paymentType'];
   $paymentStatus = $_POST['paymentStatus'];
   $paymentPlace = $_POST['paymentPlace'];
-  $gstn = $_POST['gstn'];
   $userId = $_SESSION['userId'];
 
-  $sql = "INSERT INTO `job_card` (job_card_no, customer_name, client_contact, mechanicname, supervisor_name, vehicle_type, vehicle_name, datetime_in, datetime_out, odometer_reading, fuel_level, items_in_car, pickup_drop, pickup_person_name, floor_mat, cut_mat, dents_scratches_map, sub_total, vat, total_amount, discount, grand_total, paid, due, payment_type, payment_status, payment_place, gstn, user_id, job_status)
-  VALUES ('$jobCardNo', '$customer', '$clientContact', '$mechanicName', '$supervisorName', '$vehicleType', '$vehicleName', '$datetimeIn', '$datetimeOut', '$odometer', '$fuelLevel', '$itemsInCar', '$pickupDrop', '$pickupPerson', '$floorMat', '$cutMat', '$dentsMap', '$subTotal', '$vat', '$total', '$discount', '$grandTotal', '$paid', '$due', '$paymentType', '$paymentStatus', '$paymentPlace', '$gstn', '$userId', 1)";
+  $sql = "INSERT INTO `job_card` (job_card_no, customer_name, client_contact, handled_by, booked_by, vehicle_type, vehicle_name, datetime_in, datetime_out, odometer_reading, fuel_level, items_in_car, pickup_drop, pickup_person_name, floor_mat, cut_mat, dents_scratches_map, sub_total, vat, total_amount, discount, grand_total, paid, due, payment_type, payment_status, payment_place, user_id, job_status)
+  VALUES ('$jobCardNo', '$customer', '$clientContact', '$mechanicName', '$supervisorName', '$vehicleType', '$vehicleName', '$datetimeIn', '$datetimeOut', '$odometer', '$fuelLevel', '$itemsInCar', '$pickupDrop', '$pickupPerson', '$floorMat', '$cutMat', '$dentsMap', '$subTotal', '$vat', '$total', '$discount', '$grandTotal', '$paid', '$due', '$paymentType', '$paymentStatus', '$paymentPlace', '$userId', 1)";
 
   if ($connect->query($sql) === true) {
     $jobCardId = $connect->insert_id;
@@ -63,8 +62,9 @@ if ($_POST) {
   } else {
     $valid['messages'] = "Error: " . $connect->error;
   }
-
-  echo json_encode($valid);
+	
+	echo json_encode($valid);
+	header('location:fetchJobcard.php');	
   $connect->close();
 }
 ?>
