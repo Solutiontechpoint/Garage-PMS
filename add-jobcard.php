@@ -4,13 +4,61 @@
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <?php include('./constant/connect.php'); ?>
 
+<style>
+  #productTable th {
+  background-color: #0b2a97;
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+}
+/* 1. Card background + shadow */
+.card {
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+/* 2. Fade-in Animation */
+.card {
+  animation: fadeInUp 0.7s ease;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 3. Buttons style */
+.btn {
+  border-radius: 30px;
+  padding: 10px 25px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+
+/* 5. Input field highlight on focus */
+.form-control:focus {
+  border-color: #0b2a97;
+  box-shadow: 0 0 5px rgba(11,42,151,0.3);
+}
+
+/* 6. Stylish divider */
+.section-divider {
+  border-top: 1px #ccc;
+  margin: 20px 0;
+}
+</style>
+
 <ol class="breadcrumb">
-  <li><a href="dashboard.php">Home /</a></li>
-  <li>Job Card</li>
+  <li><a href="dashboard.php">Home / </a></li>
+  <li><a href="jobcard.php">Job Card Management / </a></li>
   <li class="active">Add Job Card</li>
 </ol>
 
-<h4><i class='glyphicon glyphicon-circle-arrow-right'></i> Add Job Card</h4>
 
 <div class="page-wrapper">
   <div class="row page-titles">
@@ -28,11 +76,18 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-11 mx-auto">
-        <div class="card">
-          <div class="card-body">
+        <div>
+          <div>
             <div class="input-states">
               <form class="form-horizontal" method="POST" action="php_action/createJobcard.php" id="createJobcardForm">
-                <div class="form-group">
+              <div class="card">
+  <div class="card-body">
+  <h4 class="card-title" style="color: #0b2a97; font-weight: bold; font-size: 20px;">
+  <span style="background-color: #0b2a97; color: #fff; border-radius: 50%; width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; margin-right: 10px;">1</span>
+  Job Details
+</h4>
+    <br>
+              <div class="form-group">
                   <div class="row">
                     <label class="col-sm-2 control-label">Job Card No</label>
                     <div class="col-sm-4">
@@ -111,9 +166,17 @@
                     <div class="col-sm-4">
                       <input type="datetime-local" class="form-control" name="deliverydate" id="deliverydate" />
                     </div>
-                    <label class="col-sm-2 control-label">Pick-up & Drop</label>
-                    <div class="col-sm-4">
-                      <input type="checkbox" name="pickup_drop" id="pickup_drop" /> Yes
+                    <div class="col-sm-2">
+                    <label class="control-label">Floor Mat</label>&nbsp;       
+                      <input type="checkbox" name="floor_mat" id="floor_mat" />
+                    </div>
+                    <div class="col-sm-2">
+                    <label class="control-label">Cut Mat</label>&nbsp; 
+                      <input type="checkbox" name="cut_mat" id="cut_mat" />
+                    </div>
+                    <div class="col-sm-2">
+                    <label class="control-label">Pick-up & Drop</label>&nbsp; 
+                      <input type="checkbox" name="pickup_drop" id="pickup_drop" />
                     </div>
                   </div>
                 </div>
@@ -123,14 +186,6 @@
                     <label class="col-sm-2 control-label">Pick-up Person</label>
                     <div class="col-sm-4">
                       <input type="text" class="form-control" name="pickup_person" id="pickup_person" />
-                    </div>
-                    <label class="col-sm-2 control-label">Floor Mat</label>
-                    <div class="col-sm-2">
-                      <input type="checkbox" name="floor_mat" id="floor_mat" />
-                    </div>
-                    <label class="col-sm-2 control-label">Cut Mat</label>
-                    <div class="col-sm-2">
-                      <input type="checkbox" name="cut_mat" id="cut_mat" />
                     </div>
                   </div>
                 </div>
@@ -165,7 +220,18 @@
                     </div>
                   </div>
                 </div>
+                      </div>
+                      </div>
 
+                      <div class="section-divider"></div>
+
+<div class="card">
+  <div class="card-body">
+  <h4 class="card-title" style="color: #0b2a97; font-weight: bold; font-size: 20px;">
+  <span style="background-color: #0b2a97; color: #fff; border-radius: 50%; width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; margin-right: 10px;">2</span>
+  Service Details
+</h4>
+    <br>
                 <table class="table" id="productTable">
           <thead>
             <tr>              
@@ -218,13 +284,7 @@
                   <input type="text" name="total[]" id="total<?php echo $x; ?>" autocomplete="off" class="form-control" disabled="true" />                  
                   <input type="hidden" name="totalValue[]" id="totalValue<?php echo $x; ?>" autocomplete="off" class="form-control" />                  
                 </td>
-                <td >
-                 
-                   <button type="button" class="btn btn-primary btn-flat " onclick="addRow()" id="addRowBtn" data-loading-text="Loading..."> <i class="fa fa-plus"></i></button>
-
-          
-            </div>
-                </td>
+      
 
 <td >
                  
@@ -242,7 +302,19 @@
             ?>
           </tbody>          
         </table>
+        <button type="button" class="btn btn-primary" onclick="addRow()">Add New Row</button>
+        </div>
+</div>
 
+<div class="section-divider"></div>
+
+<div class="card">
+  <div class="card-body">
+  <h4 class="card-title" style="color: #0b2a97; font-weight: bold; font-size: 20px;">
+  <span style="background-color: #0b2a97; color: #fff; border-radius: 50%; width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; margin-right: 10px;">3</span>
+  Pricing Details
+</h4>
+    <br>
                 <!-- Pricing Section IDs added below -->
                 <div class="form-group">
                   <div class="row">
@@ -338,7 +410,8 @@
                     <button type="reset" class="btn btn-danger" id="resetBtn">Reset</button>
                   </div>
                 </div>
-
+                </div>
+                </div>
               </form>
             </div>
           </div>
@@ -816,9 +889,6 @@ function addRow() {
         '<td style="padding-left:20px;">'+
           '<input type="text" name="total[]" id="total'+count+'" autocomplete="off" class="form-control" disabled="true" />'+
           '<input type="hidden" name="totalValue[]" id="totalValue'+count+'" autocomplete="off" class="form-control" />'+
-        '</td>'+
-                '<td>'+
-          '<button class="btn btn-primary removeProductRowBtn" type="button" onclick="addRow('+count+')"><i class="fa fa-plus"></i></button>'+
         '</td>'+
         '<td>'+
           '<button class="btn btn-danger removeProductRowBtn" type="button" onclick="removeProductRow('+count+')"><i class="fa fa-trash"></i></i></button>'+
