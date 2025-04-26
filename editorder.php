@@ -103,7 +103,7 @@ if($_GET['o'] == 'add') {
        
         ?>
 
-<?php if(!isset($_SESSION['isAdmin']) || $_SESSION['isAdmin'] == 0) { ?>
+<?php if(true) { ?>
     <input type="hidden" name="showinview" id="showinview" value="1" />
 <?php } else { ?>
 <div style="padding:10px;" class="row">

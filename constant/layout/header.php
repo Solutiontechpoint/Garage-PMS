@@ -96,6 +96,14 @@ include('./constant/check.php');
               <!-- <a class="dropdown-item" href="importbrand.php">Import Brand</a> -->
             </div>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-tag"></i> Jobcard</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown08">
+              <a class="dropdown-item" href="add-jobcard.php">Add Jobcard</a>
+              <a class="dropdown-item" href="jobcard.php">Manage Jobcard</a>
+              <!-- <a class="dropdown-item" href="importbrand.php">Import Brand</a> -->
+            </div>
+          </li>
             <?php }?>
  <?php if(isset($_SESSION['userId']) && isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']) { ?>
             <!-- <li class="nav-item dropdown">
@@ -108,10 +116,10 @@ include('./constant/check.php');
            <?php }?>
            <?php if(isset($_SESSION['userId']) && isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']) { ?>
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cogs"></i> Parts</a>
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cogs"></i> Products</a>
             <div class="dropdown-menu" aria-labelledby="dropdown08">
-              <a class="dropdown-item" href="add-product.php">Add Parts</a>
-              <a class="dropdown-item" href="product.php">Manage Parts</a>
+              <a class="dropdown-item" href="add-product.php">Add Products</a>
+              <a class="dropdown-item" href="product.php">Manage Products</a>
             </div>
           </li>
           <?php }?>
