@@ -275,7 +275,7 @@ $row = $result->fetch_assoc();
     <tr id="row<?= $x ?>" class="<?= $x ?>">
       <td style="margin-left:20px;">
         <div class="form-group">
-          <select class="form-control select2" name="productName[]" id="productName<?= $x ?>" onchange="getProductData(<?= $x ?>)">
+          <select class="form-control select2" style="width:100% !important;" name="productName[]" id="productName<?= $x ?>" onchange="getProductData(<?= $x ?>)">
             <option value="">~~SELECT~~</option>
             <?php
               $products = $connect->query("SELECT * FROM product WHERE active = 1 AND status = 1");
@@ -912,7 +912,7 @@ function addRow() {
         '<td>'+
           '<div class="form-group">'+
 
-          '<select class="form-control select2_new" name="productName[]" id="productName'+count+'" onchange="getProductData('+count+')" >'+
+          '<select class="form-control select2_new" style="width:100% !important;" name="productName[]" id="productName'+count+'" onchange="getProductData('+count+')" >'+
             '<option value="">~~SELECT~~</option>';
             // console.log(response);
             $.each(response, function(index, value) {

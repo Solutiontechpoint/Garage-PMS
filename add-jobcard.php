@@ -251,7 +251,7 @@
                 <td style="margin-left:20px;">
                   <div class="form-group">
 
-                  <select class="form-control select2" name="productName[]" id="productName<?php echo $x; ?>" onchange="getProductData(<?php echo $x; ?>)" >
+                  <select class="form-control select2" style="width:100% !important;" name="productName[]" id="productName<?php echo $x; ?>" onchange="getProductData(<?php echo $x; ?>)" >
                     <option value="">~~SELECT~~</option>
                     <?php
                       $productSql = "SELECT * FROM product WHERE active = 1 AND status = 1 AND quantity != 0";
@@ -861,7 +861,7 @@ function addRow() {
         '<td>'+
           '<div class="form-group">'+
 
-          '<select class="form-control select2_new" name="productName[]" id="productName'+count+'" onchange="getProductData('+count+')" >'+
+          '<select class="form-control select2_new" style="width:100% !important;" name="productName[]" id="productName'+count+'" onchange="getProductData('+count+')" >'+
             '<option value="">~~SELECT~~</option>';
             // console.log(response);
             $.each(response, function(index, value) {
