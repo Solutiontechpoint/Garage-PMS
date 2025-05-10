@@ -25,6 +25,7 @@ if($_POST) {
 			<th>Order Date</th>
 			<th>Client Name</th>
 			<th>Contact</th>
+			<th>GST(18%)</th>
 			<th>Grand Total</th>
 		</tr>
 
@@ -41,6 +42,7 @@ if($_POST) {
 				<td><center>'.$result['order_date'].'</center></td>
 				<td><center>'.$data1['name'].'</center></td>
 				<td><center>'.$data1['mob_no'].'</center></td>
+				<td><center>'.$result['vat'].'</center></td>
 				<td><center>'.$result['grand_total'].'</center></td>
 			</tr>';	
 			$totalAmount += $result['grand_total'];
@@ -49,7 +51,7 @@ if($_POST) {
 		</tr>
 
 		<tr>
-			<td colspan="3"><center>Total Amount</center></td>
+			<td colspan="4"><center>Total Amount</center></td>
 			<td><center>'.$totalAmount.'</center></td>
 		</tr>
 	</table>

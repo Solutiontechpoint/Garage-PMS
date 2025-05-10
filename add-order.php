@@ -88,6 +88,23 @@ if($_GET['o'] == 'add') {
                                 <div class="input-states">
                                     <form class="form-horizontal" method="POST" action="php_action/createOrder.php" id="createOrderForm">
 
+
+                                    <?php if(true) { ?>
+                                    <input type="hidden" name="showinview" value="1">
+                                    <?php } else { ?>
+                                    <div style="padding:10px;" class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="float-right">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="showInView" name="showinview" checked>
+                                    <label class="custom-control-label" for="showInView">Show in View</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php } ?>
                                         
                                         <div class="form-group">
                                             <div class="row">

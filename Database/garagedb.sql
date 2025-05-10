@@ -384,6 +384,65 @@ ADD COLUMN `vehicle_name` varchar(50) NULL;
 
 
 
+CREATE TABLE `job_card` (
+  `job_card_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `customer_name` VARCHAR(255) NOT NULL,
+  `job_card_no` VARCHAR(100) NOT NULL,
+  `datetime_in` DATETIME NOT NULL,
+  `datetime_out` DATETIME DEFAULT NULL,
+  `service_type` VARCHAR(255) NOT NULL,
+  `handled_by` VARCHAR(100) NOT NULL,
+  `booked_by` VARCHAR(100) DEFAULT NULL,
+  `pickup_drop` TINYINT(1) DEFAULT 0,  -- 0 = No, 1 = Yes
+  `pickup_person_name` VARCHAR(100) DEFAULT NULL,
+  `floor_mat` TINYINT(1) DEFAULT 0,
+  `cut_mat` TINYINT(1) DEFAULT 0,
+  `items_in_car` TEXT,
+  `odometer_reading` VARCHAR(50) DEFAULT NULL,
+  `fuel_level` VARCHAR(50) DEFAULT NULL,
+  `dents_scratches_map` TEXT,
+
+  -- Vehicle details
+  `vehicle_type` VARCHAR(50) NOT NULL,
+  `vehicle_name` VARCHAR(50) NOT NULL,
+
+  -- Pricing
+  `sub_total` VARCHAR(255) NOT NULL,
+  `vat` VARCHAR(255) NOT NULL,
+  `total_amount` VARCHAR(255) NOT NULL,
+  `discount` VARCHAR(255) DEFAULT '0',
+  `grand_total` VARCHAR(255) NOT NULL,
+  `paid` VARCHAR(255) NOT NULL,
+  `due` VARCHAR(255) NOT NULL,
+  `payment_type` INT(11) NOT NULL,     -- e.g. 1 = Cash, 2 = Card, etc.
+  `payment_status` INT(11) NOT NULL,   -- 0 = Pending, 1 = Paid
+  `payment_place` INT(11) NOT NULL,
+  
+  `user_id` INT(11) NOT NULL,  -- Who created the job card
+  `job_status` INT(11) DEFAULT 0,  -- 0 = open, 1 = completed, etc.
+
+  PRIMARY KEY (`job_card_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `job_card_item` (
+  `job_card_item_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `job_card_id` INT(11) NOT NULL,
+  `product_id` INT(11) NOT NULL,
+  `quantity` VARCHAR(255) NOT NULL,
+  `rate` VARCHAR(255) NOT NULL,
+  `total` VARCHAR(255) NOT NULL,
+  `job_card_item_status` INT(11) DEFAULT 0, -- 0 = active, 1 = removed
+
+  PRIMARY KEY (`job_card_item_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+ALTER TABLE `job_card`
+ADD `client_contact` VARCHAR(20) DEFAULT NULL AFTER `customer_name`;
+
+ALTER TABLE `job_card`
+MODIFY `service_type` VARCHAR(255) DEFAULT NULL;
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
