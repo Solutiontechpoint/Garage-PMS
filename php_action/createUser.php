@@ -9,11 +9,10 @@ if($_POST) {
 	$userName 		= $_POST['userName'];
   $upassword 			= md5($_POST['upassword']);
   $uemail 			= $_POST['uemail'];
-  $isAdmin 			= $_POST['isAdmin'];
 
 	
-				$sql = "INSERT INTO users (username, password,email, admin) 
-				VALUES ('$userName', '$upassword' , '$uemail', $isAdmin)";
+				$sql = "INSERT INTO users (username, password,email) 
+				VALUES ('$userName', '$upassword' , '$uemail')";
 				//echo $sql;exit;
 				if($connect->query($sql) === TRUE) {
 					$valid['success'] = true;

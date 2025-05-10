@@ -30,11 +30,9 @@ if($_POST) {
   $paymentPlace 				= $_POST['paymentPlace'];
   $gstn 				= $_POST['gstn'];
   $userid 				= $_SESSION['userId'];
-$showInView = isset($_POST['showinview']) ? 1 : 0;
-
 
 				
-	$sql = "INSERT INTO `orders`(`order_date`, `client_name`, `client_contact`, `mechanicname`, `supervisor_name`, `vehicle_type`, `vehicle_name`, `delivery_date`, `delivery_time`, `sub_total`, `vat`, `total_amount`, `discount`, `grand_total`, `paid`, `due`, `payment_type`, `payment_status`, `payment_place`, `gstn`, `order_status`, `user_id`, `showinview`) VALUES ('$orderDate', '$clientName', '$clientContact', '$mechanicName', '$supervisorName', '$vehicleType', '$vehicleName', '$deliveryDate', '$deliveryTime', '$subTotalValue', '$vatValue', '$totalAmountValue', '$discount', '$grandTotalValue', '$paid', '$dueValue', '$paymentType', '$paymentStatus','$paymentPlace','$gstn', 1,'$userid', '$showInView')";
+	$sql = "INSERT INTO `orders`(`order_date`, `client_name`, `client_contact`, `mechanicname`, `supervisor_name`, `vehicle_type`, `vehicle_name`, `delivery_date`, `delivery_time`, `sub_total`, `vat`, `total_amount`, `discount`, `grand_total`, `paid`, `due`, `payment_type`, `payment_status`, `payment_place`, `gstn`, `order_status`, `user_id`) VALUES ('$orderDate', '$clientName', '$clientContact', '$mechanicName', '$supervisorName', '$vehicleType', '$vehicleName', '$deliveryDate', '$deliveryTime', '$subTotalValue', '$vatValue', '$totalAmountValue', '$discount', '$grandTotalValue', '$paid', '$dueValue', '$paymentType', '$paymentStatus','$paymentPlace','$gstn', 1,'$userid')";
 	
 	$order_id;
 	$orderStatus = false;

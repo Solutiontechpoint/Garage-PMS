@@ -382,11 +382,7 @@ ADD COLUMN `vehicle_type` varchar(50) NULL;
 ALTER TABLE `tbl_client` 
 ADD COLUMN `vehicle_name` varchar(50) NULL;
 
-ALTER TABLE `users`
-  ADD COLUMN `admin` TINYINT(1) NOT NULL DEFAULT FALSE;
 
-ALTER TABLE `orders` 
-ADD COLUMN `showinview` TINYINT(1) NOT NULL DEFAULT TRUE;
 
 CREATE TABLE `job_card` (
   `job_card_id` INT(11) NOT NULL AUTO_INCREMENT,

@@ -56,7 +56,7 @@ include('./constant/check.php');
                                 <img src="./assets/uploadImage/Profile/young-woman-avatar-facial-features-stylish-userpic-flat-cartoon-design-elegant-lady-blue-jacket-close-up-portrait-80474088.jpg" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
-                                   <?php if(isset($_SESSION['userId']) && isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']) { ?>
+                                   <?php if(isset($_SESSION['userId']) && $_SESSION['userId']!=1000) { ?>
                                      <li><a href="setting.php"><i class="fa fa-key"></i> Changed Password</a></li>
                                       <li><a href="users.php"><i class="fa fa-user"></i> Add user</a></li>
                                      <?php }?>
@@ -80,7 +80,7 @@ include('./constant/check.php');
           <li class="nav-item">
             <a class="nav-link" href="dashboard.php"><i class="fa fa-tachometer"></i> Dashboard</a>
           </li>
-          <?php if(isset($_SESSION['userId']) && isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']) { ?>
+          <?php if(isset($_SESSION['userId']) && $_SESSION['userId']!=1000) { ?>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Client</a>
             <div class="dropdown-menu" aria-labelledby="dropdown08">
@@ -105,7 +105,7 @@ include('./constant/check.php');
             </div>
           </li>
             <?php }?>
- <?php if(isset($_SESSION['userId']) && isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']) { ?>
+ <?php if(isset($_SESSION['userId']) && $_SESSION['userId']!=1000) { ?>
             <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-list"></i> Categories</a>
             <div class="dropdown-menu" aria-labelledby="dropdown08">
@@ -114,7 +114,7 @@ include('./constant/check.php');
             </div>
           </li> -->
            <?php }?>
-           <?php if(isset($_SESSION['userId']) && isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']) { ?>
+           <?php if(isset($_SESSION['userId']) && $_SESSION['userId']!=1000) { ?>
             <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cogs"></i> Products</a>
             <div class="dropdown-menu" aria-labelledby="dropdown08">
@@ -130,12 +130,12 @@ include('./constant/check.php');
               <a class="dropdown-item" href="Order.php">Manage Invoices</a>
             </div>
           </li>
-             <?php if(isset($_SESSION['userId']) && isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']) { ?>
+             <?php if(isset($_SESSION['userId']) && $_SESSION['userId']!=1000) { ?>
             <li class="nav-item">
             <a class="nav-link" href="report.php"><i class="fa fa-flag"></i> Reports</a>
           </li>
 <?php }?>
-<?php if(isset($_SESSION['userId']) && isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']) { ?>
+<?php if(isset($_SESSION['userId']) && $_SESSION['userId']!=1000) { ?>
 
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog"></i> Setting</a>
@@ -145,7 +145,7 @@ include('./constant/check.php');
             </div>
           </li>
           <?php }?>
-            <?php if(isset($_SESSION['userId']) && isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']) { ?>
+            <?php if(isset($_SESSION['userId']) && $_SESSION['userId']!=1000) { ?>
                  <!-- <li class="nav-item">
             <a class="nav-link" target="_blank" href="https://solutiontechservices.com/"><i class="fa fa-info-circle"></i> About Author</a>
           </li> -->

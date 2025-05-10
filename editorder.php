@@ -103,6 +103,7 @@ if($_GET['o'] == 'add') {
        
         ?>
 
+                                      
 <?php if(true) { ?>
     <input type="hidden" name="showinview" id="showinview" value="1" />
 <?php } else { ?>
@@ -122,7 +123,7 @@ if($_GET['o'] == 'add') {
                 </div>
 <?php } ?>
 
-      <div class="form-group">
+      <div class="form-group"
           <div class="row">
           <label class="col-sm-3 control-label">Order Date</label>
             <div class="col-sm-9">

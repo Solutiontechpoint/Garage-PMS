@@ -66,18 +66,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <div class="form-group">
-                                                <div class="row">
-                                                    <label class="col-sm-3 control-label">Is Admin</label>
-                                                    <div class="col-sm-9">
-                                                        <select class="form-control" id="editIsAdmin" name="editIsAdmin">
-                                                            <option value="1" <?php if($result['admin'] == 1) echo "selected"; ?>>Yes</option>
-                                                            <option value="0" <?php if($result['admin'] == 0) echo "selected"; ?>>No</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
                                          
                                         <button type="submit" name="create" id="editProductBtn" class="btn btn-primary btn-flat m-b-30 m-t-30">Submit</button>
                                     </form>
