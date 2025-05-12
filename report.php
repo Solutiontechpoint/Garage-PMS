@@ -61,6 +61,8 @@
                                         </div>
 
                                         <button type="submit"  id="generateReportBtn" class="btn btn-primary btn-flat m-b-30 m-t-30">Generate Report</button>
+                                        <button type="button" id="exportExcelBtn" class="btn btn-success btn-flat m-b-30 m-t-30 m-l-10">Export to Excel</button>
+
                                     </form>
                                 </div>
                             </div>
@@ -130,6 +132,26 @@
 
 });
     </script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const exportBtn = document.getElementById("exportExcelBtn");
+
+    exportBtn.addEventListener("click", function () {
+
+        const startDate = document.getElementById("startDate").value;
+        const endDate = document.getElementById("endDate").value;
+
+        if (startDate === "" || endDate === "") {
+            alert("Please select both Start Date and End Date.");
+            return;
+        }
+
+        // Redirect to export script with query parameters
+        window.location.href = 'php_action/exportOrderReportExcel.php?startDate=' + encodeURIComponent(startDate) + '&endDate=' + encodeURIComponent(endDate);
+    });
+});
+</script>
+
 
 <!--  Author Name: Solution Tech Services 
  for any PHP, Codeignitor, Laravel OR Python work contact me at mayuri.infospace@gmail.com  
