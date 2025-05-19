@@ -9,8 +9,13 @@
 
 <?php include('./constant/connect');
  $user=$_SESSION['userId'];
-$sql = "SELECT order_id, order_date, client_name, client_contact, payment_status FROM orders WHERE order_status = 1 AND user_id = '$user'";
-$result = $connect->query($sql);
+ $sql = "
+ SELECT o.order_id, o.order_date, c.name as client_name, o.client_contact, o.payment_status
+ FROM orders o
+ JOIN tbl_client c ON o.client_name = c.id
+ WHERE o.order_status = 1 AND o.user_id = '$user'";
+ $result = $connect->query($sql);
+ 
 
 //echo $sql;exit;
 
@@ -60,17 +65,23 @@ $result = $connect->query($sql);
                                        <tbody>
                                         <?php
 foreach ($result as $row) {
-    $sql="SELECT * from tbl_client where id='".$row['client_name']."'";
-    $result1 = $connect->query($sql);
-    $row1=$result1->fetch_assoc();
 
     ?>
                                         <tr>
                                             <td><?php echo $row['order_id'] ?></td>
                                             <td><?php echo $row['order_date'] ?></td>
-                                             <td><?php echo $row1['name'] ?></td>
+                                             <td><?php echo $row['client_name'] ?></td>
                                               <td><?php echo $row['client_contact'] ?></td>
-                                               <td><?php  ?></td>
+                                              <td>
+                                                <?php
+                                                $orderId = $row['order_id'];
+                                                $itemSql = "SELECT COUNT(*) AS itemCount FROM order_item WHERE order_id = '$orderId'";
+                                                $itemResult = $connect->query($itemSql);
+                                                $itemData = $itemResult->fetch_assoc();
+                                                echo $itemData['itemCount'];
+                                                ?>
+                                                </td>
+
                                             <td><?php  if($row['payment_status']==1)
                                             {
                                                  
@@ -98,20 +109,22 @@ foreach ($result as $row) {
                                                 
                                                 </td>
                                         </tr>
-                                     
-                                    </tbody>
+
                                    <?php    
 }
 
 ?>
+ </tbody>
                                </table>
                                 </div>
                             </div>
                         </div>
+                    
 
 <!--  Author Name: Solution Tech Services 
  for any PHP, Codeignitor, Laravel OR Python work contact me at mayuri.infospace@gmail.com  
  Visit website : solutiontechservices.com -->
-<?php include('./constant/layout/footer.php');?>
+ <?php include('./constant/layout/footer.php'); ?>
+
 
 
