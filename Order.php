@@ -126,17 +126,5 @@ foreach ($result as $row) {
  Visit website : solutiontechservices.com -->
  <?php include('./constant/layout/footer.php'); ?>
 
-<!-- Script to initialize DataTable -->
-<script>
-  $(document).ready(function() {
-    // Confirm that jQuery and DataTables are loaded
-    console.log('Page loaded, initializing DataTable...');
-    $('#myTable').DataTable({
-      searching: true,
-      ordering: true
-    });
-  });
-</script>
-
 
 
