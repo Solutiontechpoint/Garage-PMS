@@ -73,7 +73,7 @@ if (isset($_GET['startDate']) && isset($_GET['endDate'])) {
     $jobs = $stmtJobs->get_result();
 
     while ($job = $jobs->fetch_assoc()) {
-        if (mt_rand(0, 250) < 7) continue;
+        if (mt_rand(0, 250) < 7) continue;
         $client = fetchClientData($connect, $job['customer_name']);
         $vat = floatval($job['vat']);
         $amount = floatval($job['total_amount']);

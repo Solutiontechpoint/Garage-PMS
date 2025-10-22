@@ -26,12 +26,18 @@ if($_POST) {
 	$totalTax = 0;
 
 	// ===== ORDERS =====
-	$sql = "SELECT * FROM orders WHERE order_date >= '$startDate' AND order_date <= '$endDate' and order_status = 1";
-	$query = $connect->query($sql);
+	$sql = "SELECT * FROM orders WHERE order_date >= ? AND order_date <= ? AND order_status = 1";
+	$stmt = $connect->prepare($sql);
+	$stmt->bind_param("ss", $startDate, $endDate);
+	$stmt->execute();
+	$query = $stmt->get_result();
 
 	while ($result = $query->fetch_assoc()) {
-		$clientSql = "SELECT * FROM tbl_client WHERE id = '".$result['client_name']."'";
-		$clientRes = $connect->query($clientSql);
+		$clientSql = "SELECT * FROM tbl_client WHERE id = ?";
+		$clientStmt = $connect->prepare($clientSql);
+		$clientStmt->bind_param("i", $result['client_name']);
+		$clientStmt->execute();
+		$clientRes = $clientStmt->get_result();
 		$client = $clientRes->fetch_assoc();
 
 		$vat = floatval($result['vat']);
@@ -56,12 +62,18 @@ if($_POST) {
 	}
 
 	// ===== JOB CARDS =====
-	$jobSql = "SELECT * FROM job_card WHERE DATE(datetime_in) >= '$startDate' AND DATE(datetime_in) <= '$endDate' AND job_status = 1";
-	$jobQuery = $connect->query($jobSql);
+	$jobSql = "SELECT * FROM job_card WHERE DATE(datetime_in) >= ? AND DATE(datetime_in) <= ? AND job_status = 1";
+	$jobStmt = $connect->prepare($jobSql);
+	$jobStmt->bind_param("ss", $startDate, $endDate);
+	$jobStmt->execute();
+	$jobQuery = $jobStmt->get_result();
 
 	while ($row = $jobQuery->fetch_assoc()) {
-		$clientSql = "SELECT * FROM tbl_client WHERE id = '".$row['customer_name']."'";
-		$clientRes = $connect->query($clientSql);
+		$clientSql = "SELECT * FROM tbl_client WHERE id = ?";
+		$clientStmt = $connect->prepare($clientSql);
+		$clientStmt->bind_param("i", $row['customer_name']);
+		$clientStmt->execute();
+		$clientRes = $clientStmt->get_result();
 		$client = $clientRes->fetch_assoc();
 
 		$vat = floatval($row['vat']);
